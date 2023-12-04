@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./style.css">
-    <script src="./script.js" defer></script>
-    <title>Чтение файлов</title>
+  <title>File Reader</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-
 <body>
-    <div class="drop-zone">
-        Перетащите сюда файл
-    </div>
-    <p class="txt">Выберите файл</p>
-    <div class="inputandlist">
-        <input type="file" id="file-input" multiple />
-        <ul id="file-list"></ul>
-    </div>
-</body>
+  <h1>File Reader</h1>
+  <div id="header">
+    <select id="sortSelect" onchange="sortFiles()">
+      <option value="name">Сортировать по имени</option>
+      <option value="size">Сортировать по размеру</option>
+      <option value="type">Сортировать по типу</option>
+    </select>
+  </div>
+  <div id="dropZone" ondragover="handleDragOver(event)" ondrop="handleFileDrop(event)">
+    <p>Drag And Drop</p>
+  </div>
+  <div id="fileListContainer"></div>
 
+  <script src="script.js"></script>
+</body>
 </html>
